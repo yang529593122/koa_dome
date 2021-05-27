@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+<% include('./public/header.html',{id:2}) %>
+<div class="main">
+    <div class="main-article">
+        <h6 class="main-article-title">最新博文</h6>
+        <div class="main-article-list">
+            {{each article_data}}
+                <div class="main-article-list-item">
+                    <div class="main-article-list-item-top">
+                        <div class="main-article-list-item-img">
+                            <img src="https://qiniu.chengzhigang.cn/jpg/ced19828a3016115e7c54b6fff2bf258.jpg" alt="">
+                        </div>
+                        <div class="main-article-list-item-message">
+                            <h6>{{$value.title}}</h6>
+                            <p>{{$value.describe}}</p>
+                        </div>
+                    </div>
+                    <div class="main-article-list-item-bottom">
+                        <div class="main-article-list-item-bottom-left">
+                            <span>作者: {{$value.author}}</span>
+                            <span>发布时间: {{$value.create_time}}</span>
+                        </div>
+                        <div class="main-article-list-item-bottom-right">
+                            <span>浏览（{{$value.browse_num}}）</span>
+                            <span>评论（{{$value.comments_num}}）</span>
+                            <span>赞（{{$value.give_like}}）</span>
+                            <span>踩（{{$value.step_on}}）</span>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
