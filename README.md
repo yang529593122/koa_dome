@@ -1,5 +1,5 @@
 # koa_dome
-后台管理系统
+简单的案例
 
 启动api 服务
 cd server 
