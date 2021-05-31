@@ -48,7 +48,6 @@ instance.interceptors.response.use(response => {
         return Promise.reject(response.data.message)
     }
 }, error => {
-    hide()
     if (error.response) {
         // 根据请求失败的http状态码去给用户相应的提示
         let tips = error.response.status in httpCode ? httpCode[error.response.status] : error.response.data.message
