@@ -1,5 +1,13 @@
 import "./style/header.css"
-function Header() {
+function Header(props) {
+    const {hanlderLogin} = props
+    const login=()=>{
+        hanlderLogin()
+    }
+    const loginOut=()=>{
+        localStorage.clear()
+        window.location.reload()
+    }
     return (
         <div className="header">
             <div className="header-nav">
@@ -10,8 +18,21 @@ function Header() {
                     <a href="">个人</a>
                 </div>
                 <div className="header-nav-right">
-                    <span>登录 / </span>
-                    <span>注册</span>
+                    {
+                        localStorage.getItem('token') ? (
+                            <>
+                                <span>欢迎 {localStorage.getItem('uname')} </span>
+                                <span onClick={loginOut}>退出</span>
+                            </>
+
+                        ) : (
+                            <>
+                                <span onClick={login}>登录 / </span>
+                                <span>注册</span>
+                            </>
+                        )
+                    }
+
                 </div>
             </div>
         </div>

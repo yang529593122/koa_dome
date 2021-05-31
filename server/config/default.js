@@ -1,4 +1,6 @@
 const config = {
+    secret:'sdjhgfjgsjdhgfjhgsdfjh',
+    token_time: {expiresIn: '1h'},
     // 启动端口
     port: 8000,
 

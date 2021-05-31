@@ -3,6 +3,7 @@ import {requestIndex} from "../api/http"
 import Acticle from "../components/Acticle";
 import { Pagination } from 'antd';
 import "./style/index.css"
+import Login from "../components/Login";
 function  Home(){
     const [article_data, setArticleData] = useState([])
     const [current, setCurrent] = useState(1)
@@ -27,6 +28,7 @@ function  Home(){
 
         })
     }
+
     return (
         <div className="main">
             <div className="main-article">

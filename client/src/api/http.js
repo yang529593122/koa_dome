@@ -5,3 +5,8 @@ export const requestIndex = (data) => {
          return res.data
     })
 }
+export const login = (data) => {
+    return post('/user/login',data).then((res) => {
+        return res.data
+    })
+}
